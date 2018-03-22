@@ -74,7 +74,7 @@ protected void onCreate(Bundle savedInstanceState){
         @Override
         public void onClick (View view){
         mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
-            updateQuestion();
+            updateQuestion();}});
 
     mCheatButton=(Button)findViewById(R.id.cheat_button);
     mCheatButton.setOnClickListener(new View.OnClickListener(){
@@ -83,7 +83,7 @@ protected void onCreate(Bundle savedInstanceState){
         public void onClick (View v){
             boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
             Intent intent = CheatActivity.newIntent(MainActivity.this, answerIsTrue);
-            startActivityForResult(intent, REQUEST_CODE_CHEAT);}});}
+            startActivityForResult(intent, REQUEST_CODE_CHEAT);}
 
         protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if (resultCode != Activity.RESULT_OK){
