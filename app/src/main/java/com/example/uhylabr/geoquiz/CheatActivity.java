@@ -38,13 +38,10 @@ public class CheatActivity extends AppCompatActivity {
             public void OnClick (View view){
                 if (mAnswerIsTrue) {
                     mAnswerTextView.setText(R.string.true_button);}
-                else {mAnswerTextView.setText(R.string.false_button);}}
+                else {mAnswerTextView.setText(R.string.false_button);}
+            setAnswerShownResult(true);}});}
 
                 private void setAnswerShownResult(boolean isAnswerShown){
                 Intent data = new Intent();
                 data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
-                setResult(RESULT_OK, data);}});
-
-    }
-
-                }
+                setResult(RESULT_OK, data);}}

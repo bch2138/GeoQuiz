@@ -15,20 +15,20 @@ public class Question {
         mAnswerTrue=answerTrue;
     }
 
-    public int getmTextResId() {
+    public int getTextResId() {
         return mTextResId;
     }
 
-    public void setmTextResId(int mTextResId) {
-        this.mTextResId = mTextResId;
+    public void setTextResId(int textResId) {
+        mTextResId = textResId;
     }
 
-    public boolean ismAnswerTrue() {
+    public boolean isAnswerTrue() {
         return mAnswerTrue;
     }
 
-    public void setmAnswerTrue(boolean mAnswerTrue) {
-        this.mAnswerTrue = mAnswerTrue;
+    public void setAnswerTrue(boolean answerTrue) {
+        mAnswerTrue = answerTrue;
     }
     }
 
