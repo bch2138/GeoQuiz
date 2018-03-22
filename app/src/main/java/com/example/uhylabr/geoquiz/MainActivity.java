@@ -1,7 +1,6 @@
 package com.example.uhylabr.geoquiz;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,7 +46,7 @@ protected void onCreate(Bundle savedInstanceState){
     mTrueButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View view) {
+        public void onClick (View view) {
 
             checkAnswer(true);
         }});
@@ -56,7 +55,7 @@ protected void onCreate(Bundle savedInstanceState){
     mFalseButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View view){
+        public void onClick (View view){
 
             checkAnswer( false);
         }});
@@ -65,7 +64,7 @@ protected void onCreate(Bundle savedInstanceState){
     mNextButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View view){
+        public void onClick (View view){
         mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
             updateQuestion();}});
 
@@ -73,7 +72,7 @@ protected void onCreate(Bundle savedInstanceState){
     mPreviousButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View view){
+        public void onClick (View view){
         mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
             updateQuestion();
 
@@ -81,8 +80,9 @@ protected void onCreate(Bundle savedInstanceState){
     mCheatButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View v){
-            Intent intent = CheatActivity.newIntent(MainActivity.this, CheatActivity.class);
+        public void onClick (View v){
+            boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
+            Intent intent = CheatActivity.newIntent(MainActivity.this, answerIsTrue);
             startActivityForResult(intent, REQUEST_CODE_CHEAT);}});}
 
         protected void onActivityResult(int requestCode, int resultCode, Intent data){
