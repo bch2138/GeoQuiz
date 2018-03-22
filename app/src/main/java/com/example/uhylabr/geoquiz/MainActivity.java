@@ -106,6 +106,7 @@ protected void onCreate(Bundle savedInstanceState){
 
         int messageResId = 0;
                 if (mIsCheater){messageResId=R.string.judgment_toast;
+                    Toast.makeText(MainActivity.this, messageResId, Toast.LENGTH_SHORT).show();
                 }
                 else {
                 if (userPressedTrue==answerIsTrue){
