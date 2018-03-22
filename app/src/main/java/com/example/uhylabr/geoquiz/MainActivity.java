@@ -56,7 +56,7 @@ protected void onCreate(Bundle savedInstanceState){
     mFalseButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View v){
+        public void OnClick (View view){
 
             checkAnswer( false);
         }});
@@ -65,7 +65,7 @@ protected void onCreate(Bundle savedInstanceState){
     mNextButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View v){
+        public void OnClick (View view){
         mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
             updateQuestion();}});
 
@@ -73,7 +73,7 @@ protected void onCreate(Bundle savedInstanceState){
     mPreviousButton.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void OnClick (View v){
+        public void OnClick (View view){
         mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
             updateQuestion();
 
@@ -112,7 +112,7 @@ protected void onCreate(Bundle savedInstanceState){
                     messageResId=R.string.correct_toast;
                 }
                 else {messageResId=R.string.incorrect_toast;}
-                Toast.makeText(MainActivity.this, messageResId, Toast.LENGTH_SHORT).show();}}});}}
+                Toast.makeText(MainActivity.this, messageResId, Toast.LENGTH_SHORT).show();}}}
 
 
 
